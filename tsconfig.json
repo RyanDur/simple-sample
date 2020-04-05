@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "allowJs": true,
+    "outDir": "dist"
+  },
+  "include": ["./src/**/*"],
+  "lib": ["es2019"]
+}
