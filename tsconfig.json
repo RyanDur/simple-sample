@@ -1,9 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
     "allowJs": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "typeRoots" : ["./typings", "./node_modules/@types/"]
   },
   "include": ["./src/**/*"],
-  "lib": ["es2019"]
+  "exclude": [
+    "node_modules"
+  ],
+  "lib": ["es2017", "dom"]
 }
