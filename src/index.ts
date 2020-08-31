@@ -10,6 +10,7 @@ const updateCandidate = (element: FormElement) => {
     !!element.value ?
         element.classList.add('candidate') :
         element.classList.remove('candidate');
+    return element;
 };
 
 const homeAddressInput = addressInput('home');
@@ -32,9 +33,7 @@ const updateCandidateOnInput = (element: FormElement) => {
     return element;
 };
 
-['input', 'select'].forEach((elementType) => form
-    .querySelectorAll(elementType)
-    .forEach((element: FormElement) => {
-        updateCandidateOnInput(element)
-        updateCandidate(element);
-    }));
+['input', 'select'].forEach((elementType) =>
+    Array.from(form.querySelectorAll(elementType))
+        .map(updateCandidateOnInput)
+        .map(updateCandidate));
