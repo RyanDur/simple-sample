@@ -2,26 +2,34 @@
   "name": "sample",
   "version": "1.0.0",
   "description": "something",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "jest --verbose",
-    "build": "tsc"
+    "test:watch": "jest --verbose --watch",
+    "build": "rm -rf ./dist && webpack",
+    "start": "npm run build && webpack-dev-server",
+    "start:open": "npm run build && webpack-dev-server --open"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-typescript": "^7.9.0",
+    "@ryandur/webpack-configs": "^1.1.0",
     "@types/jest": "^25.2.1",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "babel-jest": "^25.2.6",
     "eslint": "^6.8.0",
-    "eslint-config-google": "^0.14.0",
+    "html-webpack-plugin": "^4.3.0",
     "jest": "^25.2.7",
     "ts-jest": "^25.3.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }

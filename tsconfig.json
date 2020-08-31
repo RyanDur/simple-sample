@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "allowJs": true,
-    "outDir": "dist",
+    "target": "es6",
+    "module": "es6",
+    "outDir": "public",
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "moduleResolution": "Node",
     "typeRoots" : ["./typings", "./node_modules/@types/"]
   },
-  "include": ["./src/**/*"],
+  "include": ["src/**/*"],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/__tests__/**/*"
   ],
-  "lib": ["es2017", "dom"]
+  "lib": ["es2017", "dom", "es5"]
 }

@@ -1,0 +1,60 @@
+html {
+    font-size: 62.5%;
+
+    & body {
+        padding: 0;
+        margin: 0;
+        background: #e8e8e8;
+        display: grid;
+        grid-auto-rows: 8rem auto;
+        gap: 4rem 0;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "header header header header" ". main main .";
+
+        & *,
+        & *:before,
+        & *:after {
+            box-sizing: border-box;
+        }
+
+        & *:not(h1):not(h2):not(h3):not(h4),
+        & *:before,
+        & *:after {
+            font-size: 1.6rem;
+            line-height: 1.6;
+        }
+
+
+        & h1, & h2, & h3, & h4 {
+            margin: 0;
+        }
+
+        & select,
+        & input {
+            padding: 0 1rem;
+            outline: none;
+            border: 0.1rem solid rgba(0, 0, 0, 0.3);
+            border-radius: 0.5rem;
+            overflow: auto;
+        }
+
+        & select:focus,
+        & select:hover,
+        & input:focus,
+        & input:hover {
+            border: 2px solid rgba(0, 0, 0, 1);
+        }
+
+        & input[type='tel'] {
+            background: url('./assets/phone-number-svgrepo-com.svg') no-repeat right;
+        }
+
+        & select:required + label:after,
+        & input:required + label:after {
+            content: "*";
+            color: firebrick;
+            vertical-align: sub;
+            margin: 0 0 0 0.25rem;
+        }
+    }
+}

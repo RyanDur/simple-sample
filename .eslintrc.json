@@ -1,15 +1,38 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "commonjs": true,
+    "node": true
   },
   "extends": [
-    "google"
+    "plugin:@typescript-eslint/eslint-recommended"
   ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
+  "overrides": [
+    {
+      "files": [
+        "*.json"
+      ],
+      "rules": {
+        "comma-dangle": [
+          "error",
+          "never"
+        ],
+        "quotes": [
+          "error",
+          "double"
+        ],
+        "semi": [
+          "error",
+          "never"
+        ]
+      }
+    }
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -19,15 +42,14 @@
     "@typescript-eslint"
   ],
   "rules": {
-  },
-  "overrides": [
-    {
-      "files": ["*.json"],
-      "rules": {
-        "quotes": ["error", "double"],
-	"semi": ["error", "never"],
-	"comma-dangle": ["error", "never"]
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "eol-last": 0,
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxEOF": 0
       }
-    }
-  ]
+    ]
+  }
 }

@@ -1,5 +1,6 @@
 module.exports = {
   preset: 'ts-jest',
+  notify: true,
   testEnvironment: 'node',
   testRegex: '(/__tests__/.*|(\\.|/)(spec))\\.tsx?$',
   transformIgnorePatterns: ['node_modules'],

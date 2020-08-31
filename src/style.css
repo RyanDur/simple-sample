@@ -1,0 +1,194 @@
+@import "reset.css";
+
+header {
+    background: white;
+    grid-area: header;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+    display: grid;
+    align-content: center;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: ". center ."
+}
+
+h1 {
+    grid-area: center;
+}
+
+form {
+    grid-area: main;
+}
+
+.card {
+    padding: 4rem;
+    background: white;
+    border-radius: 2rem;
+    box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
+    display: grid;
+    gap: 2rem;
+}
+
+#submit {
+    color: blue;
+}
+
+#submit:disabled {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.grid {
+    display: grid;
+    gap: 1rem 2rem;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.basic-info {
+    grid-auto-rows: auto 4.5rem;
+    grid-template-areas: "heading . . . . ." "first first last last birthday birthday";
+}
+
+.first {
+    grid-area: first;
+}
+
+.last {
+    grid-area: last;
+}
+
+.birthday {
+    grid-area: birthday;
+}
+
+.left {
+    justify-self: start;
+}
+
+.title {
+    position: relative;
+    padding: 0 0.1rem;
+    top: 0;
+    width: max-content;
+    margin: 1rem;
+    transition: background ease-in 50ms 300ms,
+    top ease-out 300ms;
+}
+
+.value {
+    padding: 0 1rem;
+}
+
+.value.candidate + .title,
+.value:focus + .title {
+    top: -2rem;
+    background: white;
+}
+
+.addresses {
+    grid-auto-rows: auto 4.5rem auto auto;
+    grid-template-areas: "heading . . . . ." "email email email . . ." "home home home work work work";
+}
+
+.home.address {
+    grid-auto-rows: auto 4.5rem 4.5rem 4.5rem;
+    grid-template-areas: "heading . . . . ." "street street street street street street" "city city city city city city" "state state state zip zip zip";
+}
+
+.work.address {
+    grid-auto-rows: auto 4.5rem 4.5rem 4.5rem;
+    grid-template-areas: "heading . . . same same" "street street street street street street" "city city city city city city" "state state state zip zip zip";
+}
+
+.phone-numbers {
+    grid-auto-rows: auto 4.5rem 4.5rem;
+    grid-template-areas: "heading heading . . . ." "home home home work work work" "emergency emergency emergency name name relationship";
+}
+
+.skills {
+    grid-auto-rows: auto 4.5rem 6rem;
+    grid-template-areas: "heading . . . . ." "experience experience . html css javascript" "other other other other other other";
+}
+
+.center {
+    justify-self: center;
+    align-self: center;
+}
+
+.right {
+    justify-self: center;
+}
+
+.same {
+    grid-area: same;
+    font-size: 1.2rem;
+}
+
+.home {
+    grid-area: home;
+}
+
+.work {
+    grid-area: work;
+}
+
+.email {
+    grid-area: email
+}
+
+.street {
+    grid-area: street;
+}
+
+.city {
+    grid-area: city;
+}
+
+.state {
+    grid-area: state;
+}
+
+.zip {
+    grid-area: zip;
+}
+
+.heading {
+    grid-area: heading;
+}
+
+.home {
+    grid-area: home;
+}
+
+.work {
+    grid-area: work;
+}
+
+.emergency {
+    grid-area: emergency;
+}
+
+.name {
+    grid-area: name;
+}
+
+.relationship {
+    grid-area: relationship;
+}
+
+.experience {
+    grid-area: experience;
+}
+
+.html {
+    grid-area: html;
+}
+
+.css {
+    grid-area: css;
+}
+
+.javascript {
+    grid-area: javascript;
+}
+
+.other {
+    grid-area: other;
+}
