@@ -2,7 +2,7 @@
   "name": "sample",
   "version": "1.0.0",
   "description": "something",
-  "private": false,
+  "private": true,
   "scripts": {
     "test": "jest --verbose",
     "test:watch": "jest --verbose --watch",
