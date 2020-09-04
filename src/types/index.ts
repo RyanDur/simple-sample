@@ -1,2 +1,2 @@
 export * from './CheckboxEvent';
-export * from './AddressInput';
+export * from './AddressElement';
