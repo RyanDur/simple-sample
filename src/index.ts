@@ -1,10 +1,11 @@
 import {AddressElement, CheckBoxEvent, FormElement} from './types';
-import {address} from './Address';
 import './style.css'
 
 const form: HTMLFormElement = document.querySelector('form');
 const sameAsHome: HTMLInputElement = form.querySelector('#same-as-home');
-const {addressSection} = address(form)
+const addressType = (addressType: string) => (field: string): AddressElement =>
+    form.querySelector(`.${addressType}.address`)
+        .querySelector(`.${field}.value`);
 const updateCandidate = (element: FormElement): FormElement => {
     !!element.value ? element.classList.add('candidate') : element.classList.remove('candidate');
     return element;
@@ -13,8 +14,8 @@ const updateCandidateOnInput = (element: FormElement): FormElement => {
     element.addEventListener('input', (event: Event) => updateCandidate(event.target as FormElement));
     return element;
 };
-const home = addressSection('home');
-const work = addressSection('work');
+const home = addressType('home');
+const work = addressType('work');
 const addressesElements = ['state', 'street', 'city', 'zip'].map((field) => ([home(field), work(field)]));
 const updateAddress = (work: AddressElement, home: AddressElement) => {
     work.value = home.value;
