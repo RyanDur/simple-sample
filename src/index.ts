@@ -4,29 +4,34 @@ import './style.css'
 
 const form: HTMLFormElement = document.querySelector('form');
 const sameAsHome: HTMLInputElement = form.querySelector('#same-as-home');
-const {addressInput, updateAddressField} = address(form)
-const updateCandidate = (element: FormElement) => {
+const {addressSection} = address(form)
+const updateCandidate = (element: FormElement): FormElement => {
     !!element.value ? element.classList.add('candidate') : element.classList.remove('candidate');
     return element;
 };
-const updateCandidateOnInput = (element: FormElement) => {
+const updateCandidateOnInput = (element: FormElement): FormElement => {
     element.addEventListener('input', (event: Event) => updateCandidate(event.target as FormElement));
     return element;
 };
-const addressesInputs = ['state', 'street', 'city', 'zip'].map((field) =>
-    ([addressInput('home', field), addressInput('work', field)]));
-
-const update = (work: AddressElement, home: AddressElement) => {
+const home = addressSection('home');
+const work = addressSection('work');
+const addressesElements = ['state', 'street', 'city', 'zip'].map((field) => ([home(field), work(field)]));
+const updateAddress = (work: AddressElement, home: AddressElement) => {
     work.value = home.value;
     updateCandidate(work);
 };
 
-addressesInputs.forEach(([home, work]: AddressElement[]) =>
-    home.addEventListener('input', () => sameAsHome.checked && update(work, home)));
+addressesElements.forEach(([home, work]: AddressElement[]) =>
+    home.addEventListener('input', ({target}) =>
+        sameAsHome.checked && updateAddress(work, target as AddressElement)));
 
-sameAsHome.addEventListener('click', ({target}: CheckBoxEvent) => {
-    target.checked && addressesInputs.forEach(([home, work]: AddressElement[]) => update(work, home));
-});
+sameAsHome.addEventListener('click', ({target}: CheckBoxEvent) =>
+    addressesElements.forEach(([home, work]: AddressElement[]) => {
+        if (target.checked) {
+            updateAddress(work, home);
+            (work as HTMLInputElement).readOnly = true
+        } else (work as HTMLInputElement).readOnly = false;
+    }));
 
 ['input', 'select'].forEach((elementType) =>
     Array.from<FormElement>(form.querySelectorAll(elementType))
