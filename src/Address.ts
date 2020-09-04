@@ -8,12 +8,8 @@ export const address = (form: HTMLFormElement) => {
     const updateAddressField = (left: AddressElement, right: AddressElement) =>
         right.value = left.value;
 
-    const onUpdateAddressValue = (element: AddressElement, checkBox) => (event: Event) =>
-        checkBox.checked && updateAddressField(event.target as AddressElement, element);
-
     return {
         addressInput,
-        onUpdateAddressValue,
         updateAddressField
     }
 }

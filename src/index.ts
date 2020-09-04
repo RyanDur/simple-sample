@@ -4,7 +4,7 @@ import './style.css'
 
 const form: HTMLFormElement = document.querySelector('form');
 const sameAsHome: HTMLInputElement = form.querySelector('#same-as-home');
-const {addressInput, onUpdateAddressValue, updateAddressField} = address(form)
+const {addressInput, updateAddressField} = address(form)
 const updateCandidate = (element: FormElement) => {
     !!element.value ? element.classList.add('candidate') : element.classList.remove('candidate');
     return element;
@@ -16,18 +16,17 @@ const updateCandidateOnInput = (element: FormElement) => {
 const addressesInputs = ['state', 'street', 'city', 'zip'].map((field) =>
     ([addressInput('home', field), addressInput('work', field)]));
 
-addressesInputs.forEach(([home, work]: AddressElement[]) => {
-    home.addEventListener('input', () => {
-        onUpdateAddressValue(work, sameAsHome);
-        updateCandidate(work)
-    });
-});
+const update = (work: AddressElement, home: AddressElement) => {
+    work.value = home.value;
+    updateCandidate(work);
+};
 
-sameAsHome.addEventListener('click', ({target}: CheckBoxEvent) =>
-    target.checked && addressesInputs.forEach(([home, work]: AddressElement[]) => {
-        updateAddressField(home, work);
-        updateCandidate(work)
-    }));
+addressesInputs.forEach(([home, work]: AddressElement[]) =>
+    home.addEventListener('input', () => sameAsHome.checked && update(work, home)));
+
+sameAsHome.addEventListener('click', ({target}: CheckBoxEvent) => {
+    target.checked && addressesInputs.forEach(([home, work]: AddressElement[]) => update(work, home));
+});
 
 ['input', 'select'].forEach((elementType) =>
     Array.from<FormElement>(form.querySelectorAll(elementType))
