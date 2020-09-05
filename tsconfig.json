@@ -1,17 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "es6",
-    "outDir": "public",
-    "skipLibCheck": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "target": "es2019",
+    "module": "commonjs",
     "esModuleInterop": true,
-    "moduleResolution": "Node",
-    "typeRoots" : ["./typings", "./node_modules/@types/"]
+    "strict": true,
+    "strictNullChecks": false,
+    "declaration": true,
+    "sourceMap": true,
+    "lib": [
+      "es2019",
+      "dom"
+    ],
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types/"
+    ]
   },
-  "include": ["src/**/*"],
   "exclude": [
     "node_modules",
     "**/__tests__/**/*"
-  ],
-  "lib": ["es2017", "dom", "es5"]
+  ]
 }

@@ -1,2 +1,2 @@
-export * from './CheckboxEvent';
-export * from './AddressElement';
+export type AddressElement = HTMLInputElement | HTMLSelectElement;
+export type FormElement = HTMLFormElement | AddressElement;
