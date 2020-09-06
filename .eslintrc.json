@@ -2,36 +2,13 @@
   "env": {
     "browser": true,
     "es6": true,
-    "commonjs": true,
     "node": true
   },
   "extends": [
-    "plugin:@typescript-eslint/eslint-recommended"
-  ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
-  "overrides": [
-    {
-      "files": [
-        "*.json"
-      ],
-      "rules": {
-        "comma-dangle": [
-          "error",
-          "never"
-        ],
-        "quotes": [
-          "error",
-          "double"
-        ],
-        "semi": [
-          "error",
-          "never"
-        ]
-      }
-    }
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -39,11 +16,28 @@
     "sourceType": "module"
   },
   "plugins": [
+    "prettier",
     "@typescript-eslint"
   ],
   "rules": {
+    "prettier/prettier": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
     "eol-last": 0,
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreUrls": true
+      }
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": false
+      }
+    ],
     "no-multiple-empty-lines": [
       "error",
       {

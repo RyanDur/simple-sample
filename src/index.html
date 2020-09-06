@@ -1,138 +1,222 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
+  <head>
+    <meta charset="UTF-8" />
     <title>Some Form</title>
-</head>
-<body>
-<header>
-    <h1 class="page-center">A Form</h1>
-</header>
+  </head>
+  <body>
+    <header>
+      <h1 class="page-center">A Form</h1>
+    </header>
 
-<form class="page-center card">
-    <h2>Fill me out</h2>
+    <form class="page-center card">
+      <h2>Fill me out</h2>
 
-    <section class="basic-info grid">
+      <section class="basic-info grid">
         <h3 class="heading">Basic Info</h3>
 
-        <input id="first-name" class="first value" name="firstName"
-               type="text" autofocus required/>
+        <input
+          id="first-name"
+          class="first value"
+          name="firstName"
+          type="text"
+          autofocus
+          required
+        />
         <label for="first-name" class="first title">First Name</label>
 
-        <input id="last-name" class="last value" name="lastName" type="text"/>
+        <input id="last-name" class="last value" name="lastName" type="text" />
         <label for="last-name" class="last title">Last Name</label>
 
-        <input id="birthday" class="birthday value" name="birthday" type="text" required/>
+        <input
+          id="birthday"
+          class="birthday value"
+          name="birthday"
+          type="text"
+          required
+        />
         <label for="birthday" class="birthday title">Birthday</label>
-    </section>
+      </section>
 
-    <section class="addresses grid">
+      <section class="addresses grid">
         <h3 class="heading">Address</h3>
 
-        <input id="email" class="email value" name="email" type="email"/>
+        <input id="email" class="email value" name="email" type="email" />
         <label for="email" class="email title">Email</label>
 
         <article class="home address grid">
-            <h4 class="heading">Home</h4>
+          <h4 class="heading">Home</h4>
 
-            <input id="home-street" class="street value" name="homeStreet" type="text" required/>
-            <label for="home-street" class="street title">Street</label>
+          <input
+            id="home-street"
+            class="street value"
+            name="homeStreet"
+            type="text"
+            required
+          />
+          <label for="home-street" class="street title">Street</label>
 
-            <input id="home-city" class="city value" name="homeCity" type="text" required/>
-            <label for="home-city" class="city title">City</label>
+          <input
+            id="home-city"
+            class="city value"
+            name="homeCity"
+            type="text"
+            required
+          />
+          <label for="home-city" class="city title">City</label>
 
-            <select id="home-state" class="state value" name="homeState" required>
-                <option></option>
-                <option value="illinois">Illinois</option>
-                <option value="wisconsin">Wisconsin</option>
-                <option value="indiana">Indiana</option>
-            </select>
-            <label for="home-state" class="state title">State</label>
+          <select id="home-state" class="state value" name="homeState" required>
+            <option></option>
+            <option value="illinois">Illinois</option>
+            <option value="wisconsin">Wisconsin</option>
+            <option value="indiana">Indiana</option>
+          </select>
+          <label for="home-state" class="state title">State</label>
 
-            <input id="home-zip" class="zip value"
-                   pattern="\d{5}([\-]\d{4})?" name="homeZip" required/>
-            <label for="home-zip" class="zip title">Zip</label>
+          <input
+            id="home-zip"
+            class="zip value"
+            pattern="\d{5}([\-]\d{4})?"
+            name="homeZip"
+            required
+          />
+          <label for="home-zip" class="zip title">Zip</label>
         </article>
 
         <article class="work address grid">
-            <h4 class="heading">Work</h4>
+          <h4 class="heading">Work</h4>
 
-            <input id="same-as-home" class="same left" type="checkbox"/>
-            <label for="same-as-home" class="same center">Same as Home</label>
+          <input id="same-as-home" class="same left" type="checkbox" />
+          <label for="same-as-home" class="same center">Same as Home</label>
 
-            <input id="work-street" class="street value" name="workStreet" type="text"/>
-            <label for="work-street" class="street title">Street</label>
+          <input
+            id="work-street"
+            class="street value"
+            name="workStreet"
+            type="text"
+          />
+          <label for="work-street" class="street title">Street</label>
 
-            <input id="work-city" class="city value" name="workCity" type="text"/>
-            <label for="work-city" class="city title">City</label>
+          <input
+            id="work-city"
+            class="city value"
+            name="workCity"
+            type="text"
+          />
+          <label for="work-city" class="city title">City</label>
 
-            <select id="work-state" class="state value" name="workState">
-                <option></option>
-                <option value="illinois">Illinois</option>
-                <option value="wisconsin">Wisconsin</option>
-                <option value="indiana">Indiana</option>
-            </select>
-            <label for="work-state" class="state title">State</label>
+          <select id="work-state" class="state value" name="workState">
+            <option></option>
+            <option value="illinois">Illinois</option>
+            <option value="wisconsin">Wisconsin</option>
+            <option value="indiana">Indiana</option>
+          </select>
+          <label for="work-state" class="state title">State</label>
 
-            <input id="work-zip" class="zip value" pattern="\d{5}([\-]\d{4})?" name="workZip"/>
-            <label for="work-zip" class="zip title">Zip</label>
+          <input
+            id="work-zip"
+            class="zip value"
+            pattern="\d{5}([\-]\d{4})?"
+            name="workZip"
+          />
+          <label for="work-zip" class="zip title">Zip</label>
         </article>
-    </section>
+      </section>
 
-    <section class="phone-numbers grid">
+      <section class="phone-numbers grid">
         <h3 class="heading">Phone Number</h3>
 
-        <input id="home" class="home value" name="homePhoneNumber"
-               pattern="\d{3}[\-]\d{3}[\-]\d{4}" type="tel" required/>
+        <input
+          id="home"
+          class="home value"
+          name="homePhoneNumber"
+          pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+          type="tel"
+          required
+        />
         <label for="home" class="home title">Home</label>
 
-        <input id="work" class="work value" name="workPhoneNumber"
-               pattern="\d{3}[\-]\d{3}[\-]\d{4}" type="tel"/>
+        <input
+          id="work"
+          class="work value"
+          name="workPhoneNumber"
+          pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+          type="tel"
+        />
         <label for="work" class="work title">Work</label>
 
-        <input id="emergency-contact-number" class="emergency value"
-               name="emergencyNontactNumber"
-               pattern="\d{3}[\-]\d{3}[\-]\d{4}" type="tel" required/>
-        <label for="emergency-contact-number" class="emergency title">Emergency</label>
+        <input
+          id="emergency-contact-number"
+          class="emergency value"
+          name="emergencyNontactNumber"
+          pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+          type="tel"
+          required
+        />
+        <label for="emergency-contact-number" class="emergency title"
+          >Emergency</label
+        >
 
-        <input id="emergency-contact-name" class="name value"
-               name="emergencyContactName" required/>
+        <input
+          id="emergency-contact-name"
+          class="name value"
+          name="emergencyContactName"
+          required
+        />
         <label for="emergency-contact-name" class="name title">Name</label>
 
-        <select id="relationship" class="relationship value"
-                name="emergencyContactRelationship" required>
-            <option value="parent">Parent</option>
-            <option value="sibling">Sibling</option>
-            <option value="friend">Friend</option>
+        <select
+          id="relationship"
+          class="relationship value"
+          name="emergencyContactRelationship"
+          required
+        >
+          <option value="parent">Parent</option>
+          <option value="sibling">Sibling</option>
+          <option value="friend">Friend</option>
         </select>
-        <label for="relationship" class="relationship title">Relationship</label>
-    </section>
+        <label for="relationship" class="relationship title"
+          >Relationship</label
+        >
+      </section>
 
-    <section class="skills grid">
+      <section class="skills grid">
         <h3 class="heading">Skills</h3>
 
         <select id="experience" class="experience value" name="experience">
-            <option value="1">1 year or less</option>
-            <option value="2">2 years</option>
-            <option value="3">3 - 4 years</option>
-            <option value="5">5 years or more</option>
+          <option value="1">1 year or less</option>
+          <option value="2">2 years</option>
+          <option value="3">3 - 4 years</option>
+          <option value="5">5 years or more</option>
         </select>
         <label for="experience" class="experience title">Experience</label>
 
-        <input id="html" name="htmlSkill" class="html left value" type="checkbox"/>
+        <input
+          id="html"
+          name="htmlSkill"
+          class="html left value"
+          type="checkbox"
+        />
         <label for="html" class="html right value">HTML</label>
 
-        <input id="css" class="css left value" name="css" type="checkbox"/>
+        <input id="css" class="css left value" name="css" type="checkbox" />
         <label for="css" class="css right value">CSS</label>
 
-        <input id="javascript" class="javascript left value" name="javascript" type="checkbox"/>
-        <label for="javascript" class="javascript right value">JavaScript</label>
+        <input
+          id="javascript"
+          class="javascript left value"
+          name="javascript"
+          type="checkbox"
+        />
+        <label for="javascript" class="javascript right value"
+          >JavaScript</label
+        >
 
         <textarea id="skills" class="other value" name="skills"></textarea>
         <label for="skills" class="other title">Other Skills</label>
-    </section>
+      </section>
 
-    <button id="submit" type="submit">Submit</button>
-</form>
-</body>
+      <button id="submit" type="submit">Submit</button>
+    </form>
+  </body>
 </html>
