@@ -1,23 +1,47 @@
 {
   "compilerOptions": {
+    // Specifies the root directory of input files. Only use to control the output directory structure with outDir.
     "rootDir": "src",
+    // Redirect output structure to the directory.
     "outDir": "dist",
-    "target": "es2019",
-    "module": "commonjs",
+    // Specify module code generation: "None", "CommonJS", "AMD", "System", "UMD", "ES6", "ES2015" or "ESNext".
+    "module": "esnext",
+    // Specify ECMAScript target version
+    "target": "esnext",
+    // Emit __importStar and __importDefault helpers for runtime babel ecosystem compatibility and enable
+    // allowSyntheticDefaultImports for typesystem compatibility.
     "esModuleInterop": true,
+    // Perform additional checks to ensure that separate compilation (such as with transpileModule or
+    // @babel/plugin-transform-typescript) would be safe.
+    "isolatedModules": true,
+    // Process & infer types from .js files.
+    "allowJs": true,
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Enables noImplicitAny, noImplicitThis, alwaysStrict, strictBindCallApply, strictNullChecks, strictFunctionTypes
+    // and strictPropertyInitialization.
     "strict": true,
-    "strictNullChecks": false,
+    // Generates corresponding .d.ts file.
     "declaration": true,
+    // Generates corresponding .map file.
     "sourceMap": true,
+    // List of library files to be included in the compilation.
     "lib": [
-      "es2019",
+      "esnext",
       "dom"
     ],
+    // List of folders to include type definitions from. See @types, —typeRoots and —types for more details.
     "typeRoots": [
       "./typings",
       "./node_modules/@types/"
     ]
   },
+  // Specifies an array of filenames or patterns to include in the program. These filenames are resolved relative to
+  // the directory containing the tsconfig.json file.
+  "include": [
+    "src/**/*"
+  ],
+  // Specifies an array of filenames or patterns that should be skipped when resolving include.
   "exclude": [
     "node_modules",
     "**/__tests__/**/*"

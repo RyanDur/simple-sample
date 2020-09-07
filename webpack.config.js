@@ -9,7 +9,7 @@ const {
 
 module.exports = merge(
   loadTS(),
-  configCSS({ sourceMap: true, production: true }),
+  configCSS({ sourceMap: true, production: false }),
   loadImages(),
   {
     devtool: 'source-map',

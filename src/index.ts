@@ -1,10 +1,14 @@
 import { AddressElement, FormElement } from './types';
 import './index.css';
 
-const form: HTMLFormElement = document.querySelector('form');
-const sameAsHome: HTMLInputElement = form.querySelector('#same-as-home');
+const form: HTMLFormElement = document.querySelector('form') as HTMLFormElement;
+const sameAsHome: HTMLInputElement = form.querySelector(
+  '#same-as-home'
+) as HTMLInputElement;
 const address = (addressType: string) => (field: string): AddressElement =>
-  form.querySelector(`.${addressType}.address .${field}.value`);
+  form.querySelector(
+    `.${addressType}.address .${field}.value`
+  ) as AddressElement;
 
 const updateCandidate = (element: FormElement): FormElement => {
   element.value
