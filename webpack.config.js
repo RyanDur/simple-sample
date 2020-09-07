@@ -19,7 +19,6 @@ module.exports = merge(
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Webpack demo',
         template: 'src/index.html',
         meta: {
           viewport: [
